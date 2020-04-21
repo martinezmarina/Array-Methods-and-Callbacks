@@ -37,12 +37,7 @@ winner2014(final2014);
 
 function getFinals(data) {
     const finalArray = [];
-    // for(let i = 0; i < data.length; i++){
-    //     if(data[i].Stage === "Final"){
-    //         finalArray.push(data[i]);
-    //     }
-    // }
-    // return finalArray;
+ 
     data.forEach(function(item){
         if(item.Stage === "Final"){
             finalArray.push(item);
@@ -62,7 +57,7 @@ function getYears(cbFinals) {
     })
     return finalYears;
 };
-console.log(getYears(getFinals()));
+console.log(getYears(getFinals));
 
 // console.log(getYears(getFinals(fifaData)));
 
@@ -101,10 +96,7 @@ function getAllWinners(cbWinners, cbYears) {
         console.log(`In ${cbYears[i]}, both teams tied`)
         }
     }
-    
-    // cbWinners.forEach(function(winner){
-    //     console.log(`In ${year}, ${winner} won the world cup!`);
-    // })
+
 };
 
 getAllWinners(getWinners(getFinals), getYears(getFinals));
@@ -127,9 +119,10 @@ function getCountryWins(data, teamInitials) {
     console.log(myTeamWins);
 
     const numberMyTeamWins = myTeamWins.reduce(function(accumulator, item, index){
-        return accumulator + item[index];
+        return accumulator + index;
     },0)
-    console.log(numberMyTeamWins);
+    
+    return numberMyTeamWins;
 }
 
 
@@ -143,14 +136,14 @@ in the World Cup finals */
 
 function getGoals(data) {
 
-    /* code here */
-
 };
 
-getGoals();
+getGoals(getFinals(fifaData));
+    
 
-
-/* Task 9: Write a function called badDefense() that accepts a parameter `data` and calculates the team with the most goals scored against them per appearance (average goals against) in the World Cup finals */
+/* Task 9: Write a function called badDefense() that accepts a parameter `data` and
+ calculates the team with the most goals scored against them per appearance
+  (average goals against) in the World Cup finals */
 
 function badDefense(/* code here */) {
 
@@ -161,10 +154,12 @@ function badDefense(/* code here */) {
 badDefense();
 
 
-/* Task 10: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
+/* Task 10: Write a function called `getAverageGoals` that accepts a parameter `data`
+ and returns the the average number of home team goals and away team goals scored per
+  match (Hint: use .reduce and do this in 2 steps) */
 
-function getAverageGoals(/* code here */) {
-
+function getAverageGoals(data) {
+ 
     /* code here */
 
 };
