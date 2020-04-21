@@ -125,8 +125,6 @@ function getCountryWins(data, teamInitials) {
     return numberMyTeamWins;
 }
 
-
-
 console.log(getCountryWins(getFinals(fifaData), "ITA"));
 
 
@@ -136,6 +134,7 @@ in the World Cup finals */
 
 function getGoals(data) {
 
+//returns team name with the highest average
 };
 
 getGoals(getFinals(fifaData));
